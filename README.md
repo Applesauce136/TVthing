@@ -3,6 +3,9 @@ TVthing
 
 The reponame will probably change
 
+Description
+> Social TV watching 
+
 Group Members:
 >     
 * Sappha O'Meara 
