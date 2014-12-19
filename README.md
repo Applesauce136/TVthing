@@ -14,7 +14,11 @@ Group Members:
 
 Things to figure out:
 >
-* facebook untangling mess
+* Facebook (Elise is working on): 
+  * log in through facebook
+  * get user's 'likes' 
+  * get user's friends + friends likes (if possible) 
+  * send notifications through facebook 
 * front end design
 * APIs
       * TVDB - tv show information
