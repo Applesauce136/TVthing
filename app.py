@@ -4,13 +4,15 @@ import mongo
 
 app = Flask(__name__)
 ##un = None
-##loggedin = False
+loggedin = False
 app.secret_key = "super_secret_shhh"
 
-@authenticate()
 @app.route("/", methods=["POST", "GET"])
 def index():
-    return render_template("index.html")
+    if loggedin:
+        return render_template("index.html")
+    return render_template("landing.html")
+
 
 def authenticate(page):
     # def decorate(f):
