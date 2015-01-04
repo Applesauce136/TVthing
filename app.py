@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session, escape, g
 from functools import wraps
-import mongo
 
 app = Flask(__name__)
 ##un = None
