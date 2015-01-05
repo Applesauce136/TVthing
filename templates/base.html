@@ -11,9 +11,11 @@
 		<div id = "navbar">				
 			<a id = "title" href="#">TVTHING</a>
 			<span id = "bar">
+			  {% block bar %}
 				<span class = "item"><a href="#">one</a></span>
 				<span class = "item"><a href="#">two</a></span>
 				<span class = "item"><a href="#">three</a></span>
+			{% endblock %}
 			</span>
 		</div>
 		{% block bodycontent %}
