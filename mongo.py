@@ -1,7 +1,7 @@
 from pymongo import Connection
 
-conn = Connection()
-db = conn["fawn-sappha"]
+#conn = Connection()
+#db = conn["fawn-sappha"]
 #conn.drop_database("fawn-sappha")
 
 def adduser(u, p):
