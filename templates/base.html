@@ -1,26 +1,26 @@
 <html>
-<head>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css')}}">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
-	<title>TV Thing</title>
-</head>
+  <head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='base.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+    <title>TV Thing</title>
+  </head>
 
-<body>
-	<div id = "container">
-		<div id = "navbar">				
-			<a id = "title" href="#">TVTHING</a>
-			<span id = "bar">
-			  {% block bar %}
-				<span class = "item"><a href="#">one</a></span>
-				<span class = "item"><a href="#">two</a></span>
-				<span class = "item"><a href="#">three</a></span>
-			{% endblock %}
-			</span>
-		</div>
-		{% block bodycontent %}
+  <body>
+    <div id = "container">
+      <div id = "navbar">				
+	<a id = "title" href="#">TVTHING</a>
+	<span id = "bar">
+	  {% block bar %}
+	  <span class = "item"><a href="#">one</a></span>
+	  <span class = "item"><a href="#">two</a></span>
+	  <span class = "item"><a href="/">login</a></span>
+	  {% endblock %}
+	</span>
+      </div>
+      {% block bodycontent %}
 
-		{% endblock bodycontent %}
-	</div>
-</body>
+      {% endblock bodycontent %}
+    </div>
+  </body>
 </html>

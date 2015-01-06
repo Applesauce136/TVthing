@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session, escape, g
 from functools import wraps
+import mongo
 
 app = Flask(__name__)
 ##un = None
@@ -11,6 +12,34 @@ def index():
     if loggedin:
         return render_template("index.html")
     return render_template("landing.html")
+
+@app.route("/signup", methods=["POST", "GET"])
+def signup():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        confirmpw = request.form["confirmpw"]
+        if mongo.validusername(username):
+            if password == confirmpw:
+                mongo.adduser(username, password)
+                return render_template("login.html", message = "Register Successful")
+            else:
+                return render_template("signup.html", message = "Passwords do not match. Please try again.")
+        else:
+            return render_template("signup.html", message = "That username is already taken. Please try again.")
+    return render_template("signup.html")
+
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+        if mongo.checkcombo(username, password):
+            session["username"] = username
+            return redirect(url_for('index'))      
+        else:
+            return render_template("login.html", message = "Incorrect username or password. Please try again.")
+    return render_template("login.html")
 
 
 def authenticate(page):
