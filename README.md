@@ -14,13 +14,15 @@ Group Members:
 
 Things to figure out:
 >
-* Facebook (Elise is working on): 
+* Facebook (this probably won't get done this term because the app needs to be finished first for facebook review permissions): 
   * log in through facebook
   * get user's 'likes' 
   * get user's friends + friends likes (if possible) 
   * send notifications through facebook 
 * front end design
-* APIs
+* APIs (Elise is working on): 
+      * TVmaze API 
+      * Guidebox API 
       * TVDB - tv show information
       * Netflix - more information + past shows
       * trakt.tv - tracks what you watch
