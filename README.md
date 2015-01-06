@@ -14,7 +14,7 @@ Group Members:
 
 Things to figure out:
 >
-* Facebook (this probably won't get done this term because the app needs to be finished first for facebook review permissions): 
+* Facebook (this probably won't get done this term because the app needs to be finished first for facebook review permissions. Instead, we will write our own code for friends, likes, etc.): 
   * log in through facebook
   * get user's 'likes' 
   * get user's friends + friends likes (if possible) 
@@ -33,9 +33,9 @@ Things to figure out:
 Calender(ish):
 >
 * 1/7-9 (because we've been so busy doing other things during the break and need time to reconvene)
-  * Fawn - get landing page + base page when logged in, dummy user design?
+  * Fawn - get landing page + base page when logged in, dummy user design?, formatting
   * Elise - figure out Facebook
-  * Sappha - work with Elise to figure out FB, OAuth?, database things
+  * Sappha - work with Elise to figure out database things, work with fawn on login + signup pages
 * 1/12 
   * Get friends working
   * List TV shows you watch and show schedules?
