@@ -84,3 +84,13 @@ body {
     padding: 10px;
     font-size: 20px;
 }
+.textfield {
+    font-family: "Old Standard", serif;
+}
+.button {
+    font-family: "Old Standard", serif;
+    background-color: black;
+    color:white;
+    border: none;
+    
+}

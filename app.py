@@ -12,6 +12,13 @@ def index():
         return render_template("index.html")
     return render_template("landing.html")
 
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    return render_template("login.html")
+
+@app.route("/signup", methods=["POST", "GET"])
+def signup():
+    return render_template("signup.html")
 
 def authenticate(page):
     # def decorate(f):
