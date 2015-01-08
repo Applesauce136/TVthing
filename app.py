@@ -11,7 +11,7 @@ app.secret_key = "super_secret_shhh"
 def index():
     if loggedin:
         return render_template("index.html")
-    return render_template("landing.html")
+    return render_template("landing.html", searchbar=True)
 
 @app.route("/signup", methods=["POST", "GET"])
 def signup():

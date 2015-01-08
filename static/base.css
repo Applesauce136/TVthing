@@ -86,11 +86,18 @@ body {
 }
 .textfield {
     font-family: "Old Standard", serif;
+    font-size:15px;
 }
 .button {
     font-family: "Old Standard", serif;
     background-color: black;
     color:white;
     border: none;
-    
+    padding:5px;
+    font-size:15px;
+    margin:5px;
+}
+#search {
+    display: inline;
+    border:none;
 }
