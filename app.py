@@ -37,7 +37,8 @@ def login():
         if mongo.checkcombo(username, password):
             session["username"] = username
             loggedin = True
-            return redirect(url_for('index'))      
+            return render_template("index.html")
+        #we have to redirect to /index later
         else:
             return render_template("login.html", message = "Incorrect username or password. Please try again.")
     return render_template("login.html")
