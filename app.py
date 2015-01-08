@@ -36,11 +36,16 @@ def login():
         password = request.form["password"]
         if mongo.checkcombo(username, password):
             session["username"] = username
+            loggedin = True
             return redirect(url_for('index'))      
         else:
             return render_template("login.html", message = "Incorrect username or password. Please try again.")
     return render_template("login.html")
 
+@app.route("/search", methods=["POST", "GET"])
+def search():
+    return render_template("search.html")
+                               
 
 def authenticate(page):
     # def decorate(f):
