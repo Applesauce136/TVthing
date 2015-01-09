@@ -56,7 +56,10 @@ body {
 	color: white;
 }
 #bar {
-	float: right;
+    float: right;
+    margin-bottom: auto;
+    margin-top:auto;
+    background-color:gray;
 }
 #title {
     text-decoration:none;
@@ -64,7 +67,8 @@ body {
 	padding: 10px;
 }
 #login {
-    vertical-align: middle;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 #login > a {
     text-decoration:none;
@@ -73,7 +77,9 @@ body {
     border-radius:5px;
     border:1px solid white;
     padding:10px;
+    margin: 10px;
     font-size:20px;
+    vertical-align: bottom;
 }
 #signup > a {
     text-decoration:none;
