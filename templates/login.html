@@ -1,14 +1,17 @@
 {% extends "base.html" %}
 
+{% block bar %}
+{% endblock %}
+
 {% block bodycontent %}
 <center><h1>Log In</h1></center>
 <form class="pure-form" action = "/login" method = "POST">
   <center>
-  <fieldset>
+    <fieldset>
       <input type="text" name="username" class = "textfield" placeholder = "Enter Username" required><br>
       <input type="password" name = "password" class = " textfield" placeholder = "Enter Password" required>
-  </fieldset>
-  <input type="submit" class = "button" name = "b" value = "Log In">
+    </fieldset>
+    <input type="submit" class = "button" name = "b" value = "Log In">
   </center>
 </form>
 

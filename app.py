@@ -4,13 +4,12 @@ import mongo
 
 app = Flask(__name__)
 ##un = None
-loggedin = False
 app.secret_key = "super_secret_shhh"
 
 @app.route("/", methods=["POST", "GET"])
 def index():
-    if loggedin:
-        return render_template("index.html")
+    if "username" in session:
+        return render_template("index.html", username = session["username"])
     return render_template("landing.html", searchbar=True)
 
 @app.route("/signup", methods=["POST", "GET"])
@@ -22,7 +21,7 @@ def signup():
         if mongo.validusername(username):
             if password == confirmpw:
                 mongo.adduser(username, password)
-                return render_template("login.html", message = "Register Successful")
+                return url_for("index", message = "Register Successful")
             else:
                 return render_template("signup.html", message = "Passwords do not match. Please try again.")
         else:
@@ -31,14 +30,15 @@ def signup():
 
 @app.route("/login", methods=["POST", "GET"])
 def login():
+    if "username" in session: #just for logout purposes for now, will change later
+        del session["username"]
+        return redirect("/")
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
         if mongo.checkcombo(username, password):
             session["username"] = username
-            loggedin = True
-            return render_template("index.html")
-        #we have to redirect to /index later
+            return redirect("/")
         else:
             return render_template("login.html", message = "Incorrect username or password. Please try again.")
     return render_template("login.html")
@@ -46,17 +46,6 @@ def login():
 @app.route("/search", methods=["POST", "GET"])
 def search():
     return render_template("search.html")
-                               
-
-def authenticate(page):
-    # def decorate(f):
-    #     @wraps(f)
-    #     def inner(*args):
-    #         if 'username' not in session:
-    #             return render_template(page, message = "You need to be logged in to see this!")
-    #         return f(*args)
-    #     return inner
-    return loggedin
 
 if __name__ == "__main__":
     app.debug = True
