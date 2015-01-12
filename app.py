@@ -56,6 +56,10 @@ def search():
     #return redirect("/")
     return render_template("throwaway.html", titles=titles)
 
+@app.route("/profile", methods=["POST", "GET"])
+def profile():
+    return render_template("profile.html")
+
 if __name__ == "__main__":
     app.debug = True
     app.run(host='0.0.0.0')
