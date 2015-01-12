@@ -21,37 +21,34 @@ def getShowSearch(query):
             list2.append(s["show"]["name"])
             list2.append(s["show"]["id"])
             list.append(list2)
-            print list2
         except: 
             pass
     return list
 
 
 ## return list of info for tv show by ID 
-##id, name, network, summary
+##id, name, network, summary, big picture url, little pic url
 def getShowInfo(number): 
     url = showInfoURL % (number)
     data = urllib2.urlopen(url).read()
     result = json.loads(data)
-    list = []
-    for s in result:
-        try: 
-            list.append(id)
-            list.append(name)
-            list.append(network)
-            list.append(sumamry)
-        except: 
-            pass
-
-
-#@tvmaze.route("/")
-#def index():
-#    showSearch = getShowSearch('girl')
-#    titles = []
-#    for item in showSearch: 
-#        titles.append(item[0])
-#    #showinfo = getShowInfo('1')
-#    return render_template("throwaway.html",titles=titles)
+    dict = {}
+    dict["id"] = result["id"]
+    dict["name"] = result["name"]
+    dict["network"] = result["network"]["name"]
+    dict["summary"] = result["summary"]
+    #dict["bigpicURL"] = result[
+    #list.append(s["summary"])
+    print dict
+    
+@tvmaze.route("/")
+def index():
+    showSearch = getShowSearch('girl')
+    titles = []
+    for item in showSearch: 
+        titles.append(item[0])
+    showInfo = getShowInfo("139")
+    return render_template("throwaway.html",titles=titles)
 
 if __name__=="__main__":
     tvmaze.debug=True
