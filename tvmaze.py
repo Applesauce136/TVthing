@@ -44,16 +44,14 @@ def getShowInfo(number):
             pass
 
 
-
-@tvmaze.route("/")
-def index():
-    showSearch = getShowSearch('girl')
-    titles = []
-    for item in showSearch: 
-        titles.append(item[0])
-    #showinfo = getShowInfo('1')
-    return render_template("throwaway.html",titles=titles)
-    
+#@tvmaze.route("/")
+#def index():
+#    showSearch = getShowSearch('girl')
+#    titles = []
+#    for item in showSearch: 
+#        titles.append(item[0])
+#    #showinfo = getShowInfo('1')
+#    return render_template("throwaway.html",titles=titles)
 
 if __name__=="__main__":
     tvmaze.debug=True

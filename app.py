@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, flash, redirect, url_for, session, escape, g
 from functools import wraps
 import mongo
+import tvmaze
 
 app = Flask(__name__)
 ##un = None
@@ -45,7 +46,15 @@ def login():
 
 @app.route("/search", methods=["POST", "GET"])
 def search():
-    return render_template("search.html")
+    #tvmaze.getShowSearch(query)
+    showSearch = tvmaze.getShowSearch('girl')
+    titles = []
+    for item in showSearch: 
+        titles.append(item[0])
+    #showinfo = getShowInfo('1')
+    #return render_template("search.html")
+    #return redirect("/")
+    return render_template("throwaway.html", titles=titles)
 
 if __name__ == "__main__":
     app.debug = True
