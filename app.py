@@ -56,6 +56,10 @@ def search():
     #return redirect("/")
     return render_template("throwaway.html", titles=titles)
 
+@app.route("/show/<int:showid>", methods=["POST","GET"])
+def showpage(showid):
+    return render_template("showpage.html", info = {name: "TITLE", summary: "SUMMMMMARY"}) #waiting on elise for getShowInfo
+
 if __name__ == "__main__":
     app.debug = True
     app.run(host='0.0.0.0')
