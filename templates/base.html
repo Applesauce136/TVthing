@@ -9,16 +9,15 @@
     <div id = "container">
       <div id = "navbar">				
 	<a id = "title" href="/">TVTHING</a>
-	{% if searchbar %}<span>
+	<span>
 	  <form id = "search" action = "/search" method = "POST">
 	    <fieldset id = "search">
-	      <input td = ype="text" name="search" class = "textfield" placeholder = "Search...">
+	      <input type="text" name="search" class = "textfield" placeholder = "Search...">
 	    </fieldset>
 	    <input type="submit" class="button" name = "b" value="Search">
 	</form></span>
-	{% endif %}
 	<span id = "bar">
-	  {% block bar %}
+	  {% block bar %}h
 	  {% if username %}
 	  <span id = "login"><a href="/login">Log Out</a></span>
 	  {% else %}

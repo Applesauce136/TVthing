@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block bodycontent %}
+<div class = "bigbox">
+  <h1>{{username}}</h1>
+  <h1>Shows I Watch</h1>
+  <h1>My Friends</h1>
+  
+<!--edit button-->
+
+{% endblock bodycontent %}
