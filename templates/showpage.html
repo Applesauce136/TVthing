@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block bodycontent %}
+
+{% if info %}
+
+<center>
+  <h1>{{info[name]}}</h1>
+  {{info[summary]}}
+</center>
+{% endif %}
+
+{% endblock %}
