@@ -69,8 +69,11 @@ def showpage(showid):
 
 @app.route("/profile", methods=["POST", "GET"])
 def profile():
-    return render_template("profile.html")
+    if "username" in session:
+        return render_template("profile.html", username = session["username"])
+    return redirect("/")
 
+    
 if __name__ == "__main__":
     app.debug = True
     app.run(host='0.0.0.0')
