@@ -65,7 +65,7 @@ def search():
 
 @app.route("/show/<int:showid>", methods=["POST","GET"])
 def showpage(showid):
-    return render_template("showpage.html", info = {name: "TITLE", summary: "SUMMMMMARY"}) #waiting on elise for getShowInfo
+    return render_template("showpage.html", info = {"name": "TITLE", "summary": "SUMMMMMARY"}) #waiting on elise for getShowInfo
 
 @app.route("/profile", methods=["POST", "GET"])
 def profile():
