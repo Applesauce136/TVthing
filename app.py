@@ -11,7 +11,7 @@ app.secret_key = "super_secret_shhh"
 def index():
     if "username" in session:
         return render_template("index.html", username = session["username"])
-    return render_template("landing.html", searchbar=True)
+    return render_template("landing.html")
 
 @app.route("/signup", methods=["POST", "GET"])
 def signup():
@@ -47,14 +47,21 @@ def login():
 @app.route("/search", methods=["POST", "GET"])
 def search():
     #tvmaze.getShowSearch(query)
-    showSearch = tvmaze.getShowSearch('girl')
-    titles = []
-    for item in showSearch: 
-        titles.append(item[0])
+    #showSearch = tvmaze.getShowSearch('girl')
+    #titles = []
+    #for item in showSearch: 
+    #    titles.append(item[0])
     #showinfo = getShowInfo('1')
     #return render_template("search.html")
     #return redirect("/")
-    return render_template("throwaway.html", titles=titles)
+    if request.method == "POST":
+        query = request.form["search"]
+        tvmaze.getShowSearch(query)
+        showSearch = tvmaze.getShowSearch(query)
+        titles = []
+        for item in showSearch:
+            titles.append(item[0])
+    return render_template("search.html", titles=titles)
 
 @app.route("/show/<int:showid>", methods=["POST","GET"])
 def showpage(showid):
