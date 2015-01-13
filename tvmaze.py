@@ -8,6 +8,7 @@ tvmaze = Flask(__name__)
 
 showSearchURL = "http://api.tvmaze.com/search/shows?q=%s"
 showInfoURL =  "http://api.tvmaze.com/shows/%s"
+scheduleURL = "http://api.tvmaze.com/schedule?country=%s&date=%s"
 
 ## return list of lists of NAMES,id of top tv shows bases on search
 def getShowSearch(query): 
@@ -41,6 +42,11 @@ def getShowInfo(number):
     dict["smallpicURL"] = result["image"]["medium"]
     print dict
     return dict
+
+## get a schedule for user's designated TV networks
+## default is US and current date
+def getschedule(country, day):
+    
 
 @tvmaze.route("/")
 def index():
