@@ -37,10 +37,11 @@ def getShowInfo(number):
     dict["name"] = result["name"]
     dict["network"] = result["network"]["name"]
     dict["summary"] = result["summary"]
-    #dict["bigpicURL"] = result[
-    #list.append(s["summary"])
+    dict["bigpicURL"] = result["image"]["original"]
+    dict["smallpicURL"] = result["image"]["medium"]
     print dict
-    
+    return dict
+
 @tvmaze.route("/")
 def index():
     showSearch = getShowSearch('girl')
